@@ -1,0 +1,56 @@
+.dark-theme .logo svg {
+  color: #fff;
+}
+
+.dark-theme label i {
+  color: #999 !important;
+}
+
+.dark-theme input,
+.dark-theme label {
+  background-color: transparent !important;
+  background: transparent !important;
+  border-color: #999;
+  color: #fff;
+}
+
+.dark-theme input,
+.dark-theme input:-webkit-autofill,
+.dark-theme input:-webkit-autofill:hover,
+.dark-theme input:-webkit-autofill:focus,
+.dark-theme input:-webkit-autofill:active,
+.dark-theme label {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.dark-theme input:hover,
+.dark-theme input:focus,
+.dark-theme input:focus i {
+  border-color: #fff;
+  color: #fff;
+}
+
+.dark-theme ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.dark-theme :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.dark-theme ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.dark-theme [class^="Fieldstyled__StyledInputAlert"] {
+  color: #e5536b !important;
+}
+
+.dark-theme [class^="Fieldstyled__StyledInputWrapper"] ::placeholder {
+  color: #fff !important;
+}
