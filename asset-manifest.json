@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/upg-community-design-system-demo-app/static/css/main.48c89fc8.css",
-    "main.js": "/upg-community-design-system-demo-app/static/js/main.6359e330.js",
+    "main.css": "/upg-community-design-system-demo-app/static/css/main.35d9897e.css",
+    "main.js": "/upg-community-design-system-demo-app/static/js/main.45629bed.js",
     "index.html": "/upg-community-design-system-demo-app/index.html",
-    "main.48c89fc8.css.map": "/upg-community-design-system-demo-app/static/css/main.48c89fc8.css.map",
-    "main.6359e330.js.map": "/upg-community-design-system-demo-app/static/js/main.6359e330.js.map"
+    "main.35d9897e.css.map": "/upg-community-design-system-demo-app/static/css/main.35d9897e.css.map",
+    "main.45629bed.js.map": "/upg-community-design-system-demo-app/static/js/main.45629bed.js.map"
   },
   "entrypoints": [
-    "static/css/main.48c89fc8.css",
-    "static/js/main.6359e330.js"
+    "static/css/main.35d9897e.css",
+    "static/js/main.45629bed.js"
   ]
 }
