@@ -10,6 +10,13 @@ export const Footer = ({ color, ...props }) => {
       >
         Izjava o privatnosti
       </a>
+      <a
+        href="https://636530efb574516e4a4a976e-yajyvtsgvu.chromatic.com/?path=/story/library-v0-0-0-getting-started--page"
+        target="_blank"
+        className="myid-accent"
+      >
+        Storybook
+      </a>
     </div>
   );
 };
