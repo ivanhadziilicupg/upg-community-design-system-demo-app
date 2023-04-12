@@ -1,0 +1,47 @@
+:root {
+    --background-color: #312B78;
+    --form-background-color: white;
+
+    --form-text-color: #3C3C3C;
+    --form-input-border: #C2C2C2;
+    --form-text-color-disabled: #C2C2C2;
+    --form-idp-background: #F1F0FA;
+    --form-idp-background-hover: #D4D2EF;
+
+    --button-tertiary-pressed: #7E78CF;
+
+    --button-color-accent: #50E2D1;
+    --button-color-primary: #312B78;
+    --button-color-accent-dark: #2DDCC8;
+    --button-color-accent-light: #73E8DA;
+    --border-color-f7f7f7: #312b78;
+    --color-accent: #50E2D1;
+    --color-accent-dark: #2DDCC8;
+    --color-accent-light: #73E8DA;
+    --color-common-link:#625AC4;
+    --color-primary: #312B78;
+
+    --color-secondary: #625AC4;
+    --color-secondary-light: #B8B4E4;
+
+    --color-tertiary: white;
+
+    --color-neutral: #E6E6E6;
+    --color-neutral-light: #F0F0F0;
+
+    --helper-message: #848484;
+    --error: #E0304C;
+    --error-message: #A51930;
+    --error-message-border: #E0304C;
+    --error-message-background: #FAE1E5;
+
+    --warning: #734d14;
+    --warning-message: #5C3D0F;
+    --warning-message-background: #FAF2E6;
+
+    --success-message: #2F5217;
+    --success-message-background: #E8FADC;
+
+    --info-message: #211C4E;
+    --info-message-background: #F1F0FA;
+}

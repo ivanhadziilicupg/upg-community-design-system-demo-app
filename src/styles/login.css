@@ -1,0 +1,179 @@
+/*=============================================================================*/
+/* IDENTITY PROVIDER LIST */
+/*=============================================================================*/
+#kc-social-providers {
+    display: flex;
+    flex-direction: column;
+}
+
+.myid-idp-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    padding-left: 0;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.myid-idp-list-center{
+    justify-content: center;
+}
+
+.myid-idp-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc((50% - 1.2rem));
+
+    border: 1px solid var(--color-secondary);
+    box-sizing: border-box;
+    min-height: 2.5rem;
+
+    margin: 0.5rem 0.5rem;
+
+    position: relative;
+}
+
+.myid-idp-list-item:hover .myid-idp-list-item-name {
+    filter: brightness(75%);
+}
+.myid-idp-list-item:active .myid-idp-list-item-name {
+    filter: brightness(125%);
+}
+
+.myid-idp-logo {
+    height: 1.5rem;
+
+    position: absolute;
+    top: calc(50% - 0.75rem);
+    left: 0.75rem;
+}
+
+.myid-idp-list-item-name {
+    text-align: center;
+    max-width: 70%;
+}
+
+#myid-other-social-providers-label {
+    display: flex;
+    align-self: center;
+    padding-bottom: 1rem;
+}
+
+#social-itsme {
+    border: 1px solid #FF4612;
+    color: #FF4612;
+}
+
+#social-google {
+    border: 1px solid #807B75;
+    color: #807B75
+}
+
+#social-franceconnect {
+    border: 1px solid #034EA2;
+    color: white;
+    background-color: #034EA2;
+}
+
+/*=============================================================================*/
+/* USERNAME/PASSWORD FORM */
+/*=============================================================================*/
+#kc-form-login {
+    display: flex;
+    flex-direction: column;
+}
+
+.myid-login-form-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#kc-login {
+    width: 15rem;
+}
+
+
+/* REGISTER USER INFO / FORGOT PASSWORD INFO */
+
+.myid-sign-up {
+    display: flex;
+    justify-content: center;
+}
+
+.myid-sign-up.order-first {
+    order: -1;
+    padding-bottom: 1rem;
+}
+
+#kc-registration-container{
+    padding-top: 1rem;
+}
+
+/*LOGIN UPDATE PASSWORD*/
+
+#kc-passwd-update-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.passwordRequirements {
+    margin: 0.5rem 0 0;
+}
+
+.passwordRequirements > .myid-form-buttons {
+    padding: 0;
+    align-self: unset;
+    width: calc(100% - 1.3rem);
+}
+
+#kc-passwd-update-form > div:nth-of-type(1) {
+    order: 2;
+}
+
+#kc-passwd-update-form > div:nth-of-type(2) {
+    order: 1;
+    margin-bottom: 0;
+}
+
+#kc-passwd-update-form > div:nth-of-type(3) {
+    order: 3;
+}
+
+#kc-passwd-update-form > div:nth-of-type(4) {
+    order: 4;
+}
+
+#myid-login-infobox {
+    display: var(--myid-login-infobox-display);
+}
+
+.spid-login-box-info-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spid-login-box-info-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.spid-login-box-info-description {
+    line-height: 1.4rem;
+}
+
+.singpass-qr-code-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* qr code dimensions/sizes: 298x367 */
+div#singpass-qr-code-element {
+    width: 298px;
+    min-height: 367px;
+    background-color: #f0f0f0;
+}

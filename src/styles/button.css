@@ -1,0 +1,116 @@
+.myid-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    color: var(--color-primary);
+    height: 2.5rem;
+    min-width: 15rem;
+
+    padding: 0.5rem 1rem;
+
+    -webkit-appearance: none;
+
+}
+
+.myid-button.myid-button-primary{
+    background-color: var(--button-color-accent);
+    color: var(--button-color-primary);
+}
+
+.myid-button.myid-button-secondary{
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+}
+
+.myid-button.myid-button-secondary-outline{
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.myid-button-tertiary{
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.myid-button-tertiary.red-color {
+    color: var(--error);
+}
+
+.myid-button:focus, .myid-button:hover{
+    cursor: pointer;
+}
+
+.myid-button-primary:focus, .myid-button-primary:hover{
+    background-color: var(--button-color-accent-dark);
+}
+.myid-button-primary:active{
+    background-color: var(--button-color-accent-light);
+}
+
+.myid-button-secondary:focus, .myid-button-secondary:hover{
+    background-color: var(--color-secondary-dark);
+}
+
+.myid-button-secondary-outline:focus, .myid-button-secondary-outline:hover{
+    color: var(--color-secondary-dark);
+    border: 2px solid var(--color-secondary-dark);
+}
+.myid-button-secondary-outline:active{
+    color: var(--button-tertiary-pressed);
+    border: 2px solid var(--button-tertiary-pressed);
+}
+
+.myid-button-tertiary:focus, .myid-button-tertiary:hover{
+    outline: none;
+    color: var(--color-secondary-dark);
+}
+
+.myid-button-tertiary.red-color:focus, .myid-button-tertiary.red-color:hover {
+    color: var(--error-message);
+}
+
+.myid-button-tertiary:active{
+    outline: none;
+    color: var(--button-tertiary-pressed);
+}
+
+.myid-button-tertiary.red-color:active {
+    color: var(--error-message-border);
+}
+
+.myid-button:disabled {
+    background-color: var(--color-neutral);
+    color: var(--form-text-color-disabled);
+}
+
+.buttonAsLink {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    color: var(--color-common-link);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.buttonAsLink.myid-with-icon-back {
+    display: flex;
+    max-width: 100px;
+    align-items: center;
+    font-weight: normal;
+}
+
+.buttonAsLink.myid-with-icon-back img {
+    margin-right: 6px;
+}

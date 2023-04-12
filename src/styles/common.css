@@ -1,0 +1,361 @@
+@import "colors.css";
+
+h2 {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  margin: 0 0;
+}
+
+h4 {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0 0;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--color-common-link);
+  text-decoration: none;
+}
+
+a.myid-with-icon {
+  display: flex;
+  align-items: center;
+}
+
+a.myid-with-icon > span {
+  padding-left: 0.5rem;
+}
+
+a.myid-with-icon.myid-with-icon-back > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+a.myid-with-icon.myid-with-icon-small > img {
+  width: 0.5rem;
+  height: 0.25rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.myid-accent {
+  color: var(--color-accent);
+}
+
+.myid-bold {
+  font-weight: 600;
+}
+
+.myid-display-block {
+  display: block;
+}
+
+.chevron-left {
+  transform: rotate(90deg);
+}
+.chevron-up {
+  transform: rotate(180deg);
+}
+.chevron-right {
+  transform: rotate(270deg);
+}
+
+.d-flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center !important;
+  flex-direction: row !important;
+}
+
+.with-icon.warning {
+  color: var(--warning);
+  margin-bottom: 14px;
+}
+
+.with-icon.warning img {
+  margin: 4px 8px 0 0;
+}
+
+.mt-20px {
+  margin-top: 20px;
+}
+
+.mb-6px {
+  margin-bottom: 6px;
+}
+
+h2.missing-up-prod-h2 {
+  margin-top: 15px;
+}
+
+.pb-0-force {
+  padding-bottom: 0 !important;
+}
+
+.lh-1-5rem {
+  line-height: 1.5rem;
+}
+
+.warning-missing-subinstruction ul {
+  padding: 0;
+  margin: 0;
+}
+
+.warning-missing-subinstruction ul li {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 5px;
+}
+
+.top-header-right {
+  display: flex;
+}
+
+.health-status-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  user-select: none;
+}
+
+.health-status-container .health-status-title {
+  text-align: center;
+}
+
+.health-status-container .shortcut-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.health-status-container .shortcut {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #ca9713;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  padding: 0;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.health-status-container .details-list-container {
+  position: absolute;
+  background-color: #faf2e6;
+  color: #5c3d0f;
+  z-index: 10;
+  font-size: 16px;
+  padding: 16px 2px 25px 20px;
+  width: 280px;
+  top: 64px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgb(49 43 120 / 8%), 0px 4px 8px rgb(49 43 120 / 12%),
+    0px 2px 4px rgb(49 43 120 / 16%);
+}
+
+.health-status-container .details-list-container .icon-triangle {
+  color: #faf2e6;
+  position: absolute;
+  top: 0;
+  margin-top: -13px;
+  font-size: 25px;
+  font-stretch: ultra-expanded;
+  margin-left: 23px;
+  transform: rotate(45deg);
+}
+
+.health-status-container .button-close-health-status {
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.health-status-container .button-close-health-status img {
+  width: 15px;
+}
+
+.health-status-container .details-title {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  padding: 0 30px 10px 0;
+}
+
+.health-status-container .details-title img {
+  width: 100%;
+}
+
+.health-status-container .details-title > div {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+.health-status-container .details-content {
+  max-height: 223px;
+  overflow: hidden;
+  position: relative;
+  overflow-y: auto;
+  padding-right: 25px;
+  margin-top: 10px;
+}
+
+.health-status-container .details-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1px solid #808080;
+  padding: 12px 0;
+}
+
+.health-status-container .details-item:last-child {
+  border-bottom: none;
+}
+
+.health-status-container .details-item img {
+  margin-right: 8px;
+}
+
+.health-status-container .details-item > div {
+  line-height: 21px;
+}
+
+.health-status-container .details-item > div strong {
+  font-weight: 600;
+}
+
+.health-status-container .details-item div.sub {
+  color: var(--form-text-color);
+}
+
+.health-status-container.has-error .shortcut {
+  background-color: #84061b;
+}
+
+.health-status-container.has-warning .shortcut {
+  background-color: #a16204;
+}
+
+.health-status-container.has-info .shortcut {
+  background-color: #235703;
+}
+
+.health-status-container .details-content .details-title {
+  padding-left: 28px;
+  position: relative;
+}
+
+.health-status-container.has-error .details-content .details-title,
+.health-status-container .details-item.type-error {
+  color: #84061b;
+}
+
+.health-status-container.has-warning .details-content .details-title,
+.health-status-container .details-item.type-warning {
+  color: #a16204;
+}
+
+.health-status-container.has-info .details-content .details-title,
+.health-status-container .details-item.type-info {
+  color: #235703;
+}
+
+.health-status-container.has-error .details-list-container {
+  background-color: #fae1e5;
+}
+
+.health-status-container.has-warning .details-list-container {
+  background-color: #fdf4e6;
+}
+
+.health-status-container.has-info .details-list-container {
+  background-color: #f2fdeb;
+}
+
+.health-status-container.has-info .details-title img {
+  margin-top: -2px;
+}
+
+p.error-msg-with-icon {
+  color: #cc2929;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 30px;
+  position: relative;
+}
+
+p.error-msg-with-icon::before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-image: url(../img/icon-error-msg.svg); */
+}
+
+ul.tech-error-content {
+  font-size: 15px;
+}
+
+ul.tech-error-content li {
+  padding-bottom: 5px;
+}
+
+ul.tech-error-content > li {
+  text-transform: capitalize;
+}
+
+ul.tech-error-content > li strong {
+  text-transform: none;
+}
+
+.query-params-title {
+  display: flex;
+  width: auto;
+  cursor: pointer;
+}
+
+.query-params-title span {
+  margin-left: 5px;
+}
+
+.query-params-title span.down {
+  transform: rotate(45deg);
+  margin-top: -4px;
+}
+
+.query-params-title span.up {
+  transform: rotate(-135deg);
+  margin-top: 5px;
+}
+
+.query-params-list ul {
+  padding-left: 15px;
+}

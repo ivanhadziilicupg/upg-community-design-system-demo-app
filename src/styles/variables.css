@@ -1,0 +1,23 @@
+:root {
+    --main-logo-url: url('https://img.unifiedpost.com/unifiedpost/iam/up-product/logo/UPG_RGB_Landscape_White.svg');
+    --main-bg-icon-top: -2.75rem;
+    --main-bg-icon-right: -5rem;
+    --main-bg-icon-width: 954px;
+    --main-bg-icon-height: 1156px;
+    --main-bg-icon-bottom: unset; 
+    --main-bg-icon-max-height: unset;
+    --main-bg-icon-max-width: unset; 
+    --main-bg-icon-sm-top: -1.8rem;
+    --main-bg-icon-sm-right: -16.5rem;
+    --main-bg-icon-sm-width: 480px;
+    --main-bg-icon-sm-height: 581px;
+    --main-footer-disclaimerUpg-display: block;
+    --myid-login-infobox-display: flex;
+    --upg-register-infobox-display: flex;
+    --myid-disclaimer-display: block;
+    --myid-appversion-display: absolute;
+    --main-logo-display: block;
+    --login-form-header-flex-justify: space-between;
+    --common-box-shadow: none;
+    --myid-content-form-bg-color: unset;
+}

@@ -4,17 +4,13 @@ import {
   UpLogoName,
 } from "@ivanhadziilicupg/upg-community-design-system/lib/icons";
 
-export const Logo = ({ color, ...props }) => {
+export const Logo = ({ color }) => {
   return (
-    <a href="/" className={"logo"}>
-      <Icon icon={UpLogoShape} color={color} size="lg" position="left" />
-      <UpLogoName
-        color={color}
-        style={{
-          fontSize: 100,
-          height: 26,
-        }}
-      />
+    <a href="/" className="logo">
+      <Icon icon={UpLogoShape} color={color} position="left" />
+      <i className="upg">
+        <UpLogoName color={color} />
+      </i>
     </a>
   );
 };

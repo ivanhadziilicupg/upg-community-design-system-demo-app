@@ -1,0 +1,300 @@
+/* @import "alerts.css"; */
+@import "variables.css";
+@import "colors.css";
+@import "common.css";
+/* @import "button.css"; */
+/* @import "checkbox.css"; */
+/* @import "radiobutton.css"; */
+/* @import "form.css"; */
+@import "locale.css";
+/* @import "login.css"; */
+@import "register.css";
+/* @import "otp.css"; */
+
+:root {
+  font-family: "Source Sans Pro";
+  font-size: 16px;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.myid-body {
+  background-color: var(--background-color);
+  color: var(--color-tertiary);
+}
+
+.myid-background-icon {
+  position: fixed;
+  z-index: -1;
+  top: var(--main-bg-icon-top);
+  bottom: var(--main-bg-icon-bottom);
+  right: var(--main-bg-icon-right);
+  width: var(--main-bg-icon-width);
+  height: var(--main-bg-icon-height);
+  max-height: var(--main-bg-icon-max-height);
+  max-width: var(--main-bg-icon-max-width);
+
+  pointer-events: none;
+}
+
+.myid-login {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.myid-login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex-grow: 1;
+}
+
+/*=============================================================================*/
+/* HEADER - LOGO & I18N */
+/*=============================================================================*/
+
+.myid-login-form-header > div {
+  display: flex;
+  justify-content: var(--login-form-header-flex-justify);
+  align-items: center;
+  flex-grow: 1;
+}
+
+.myid-login-form-header .myid-logo {
+  height: 63px;
+  margin: 1rem 2rem;
+  display: var(--main-logo-display);
+}
+
+.myid-login-form-header div.myid-logo {
+  width: 300px;
+  background-image: var(--main-logo-url);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 300px 63px;
+}
+
+/*=============================================================================*/
+/* CONTENT - TITLE & FORM */
+/*=============================================================================*/
+#kc-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  flex-grow: 2;
+
+  padding: 0;
+}
+
+.myid-content-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+#kc-page-title {
+  font-size: 2.5rem;
+  margin: 0.25rem 0;
+  max-width: 32rem;
+  text-align: center;
+}
+
+.myid-content-subtitle {
+  margin: 0.25rem 0;
+}
+
+#kc-content-wrapper {
+  background-color: var(--form-background-color);
+  color: var(--form-text-color);
+  width: 36rem;
+  box-shadow: var(--common-box-shadow);
+}
+
+.myid-content-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 3rem;
+  background-color: var(--myid-content-form-bg-color);
+}
+
+/*=============================================================================*/
+/* MYID INFOBOX */
+/*=============================================================================*/
+.myid-infobox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 3rem;
+  background-color: var(--myid-content-form-bg-color);
+}
+
+.myid-register-infobox.myid-infobox {
+  display: var(--upg-register-infobox-display);
+}
+
+.myid-infobox.myid-infobox-footer {
+  border-top: 4px solid var(--border-color-f7f7f7);
+}
+
+.myid-infobox.myid-infobox-header {
+  border-bottom: 4px solid var(--border-color-f7f7f7);
+}
+
+.myid-infobox.myid-infobox-header .guide br {
+  content: "";
+  width: 100%;
+  display: flex;
+  margin-top: 8px;
+}
+
+.myid-infobox > * {
+  padding: 0.5rem 0;
+}
+.myid-infobox > h4 {
+  margin-bottom: 0;
+}
+
+/*=============================================================================*/
+/* FOOTER - DISCLAIMER */
+/*=============================================================================*/
+.myid-disclaimer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  min-height: 5rem;
+  padding: 0;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.myid-disclaimer > * {
+  padding: 0.5rem;
+  margin: 0 2rem;
+  color: var(--color-secondary-light);
+}
+
+.myid-disclaimer .myid-accent {
+  color: var(--color-accent);
+  text-decoration-line: underline;
+  display: var(--myid-disclaimer-display);
+}
+
+.app-version {
+  position: var(--myid-appversion-display);
+  left: 0;
+  font-size: 0.75rem;
+}
+
+.myid-idp-list-item.comptexpert > img,
+.myid-idp-list-item.spid-teamsystem > img,
+.myid-idp-list-item.spid-tim > img,
+.myid-idp-list-item.spid-sielte > img,
+.myid-idp-list-item.spid-spidregister > img,
+.myid-idp-list-item.spid-poste > img,
+.myid-idp-list-item.spid-namirial > img,
+.myid-idp-list-item.spid-infocert > img,
+.myid-idp-list-item.spid-lepida > img,
+.myid-idp-list-item.spid-intesa > img,
+.myid-idp-list-item.spid-aruba > img,
+.myid-idp-list-item.singpass > img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.myid-idp-list-item.mojeid > img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.myid-idp-list-item.comptexpert > span,
+.myid-idp-list-item.spid-teamsystem > span,
+.myid-idp-list-item.spid-tim > span,
+.myid-idp-list-item.spid-sielte > span,
+.myid-idp-list-item.spid-spidregister > span,
+.myid-idp-list-item.spid-poste > span,
+.myid-idp-list-item.spid-namirial > span,
+.myid-idp-list-item.spid-infocert > span,
+.myid-idp-list-item.spid-lepida > span,
+.myid-idp-list-item.spid-intesa > span,
+.myid-idp-list-item.spid-aruba > span,
+.myid-idp-list-item.singpass > span {
+  display: none;
+}
+.myid-idp-list-item.mojeid > span {
+  display: none;
+}
+
+.myid-idp-list-item.iam-italy-spid,
+.myid-idp-list-item.iam-italy-spid-prod {
+  background-color: #06c;
+  color: #fff;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 19px;
+  border: none;
+}
+
+.myid-idp-list-item.iam-italy-spid img,
+.myid-idp-list-item.iam-italy-spid span,
+.myid-idp-list-item.iam-italy-spid-prod img,
+.myid-idp-list-item.iam-italy-spid-prod span {
+  display: none;
+}
+
+.myid-idp-list-item.iam-italy-spid:before,
+.myid-idp-list-item.iam-italy-spid-prod:before {
+  content: "";
+  height: 100%;
+  background-position: 11px center;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  min-width: 47px;
+  border-right: rgba(255, 255, 255, 0.1) 0.1em solid;
+}
+
+.myid-idp-list-item.iam-italy-spid:after,
+.myid-idp-list-item.iam-italy-spid-prod:after {
+  content: "Entra con SPID";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myid-idp-list-item.iam-italy-spid:hover,
+.myid-idp-list-item.iam-italy-spid-prod:hover {
+  background-color: #036;
+  color: #fff;
+}
+
+.myid-idp-list-item.iam-italy-spid:active,
+.myid-idp-list-item.iam-italy-spid-prod:active {
+  background-color: #83beed;
+  color: #036;
+}
+
+.myid-disclaimerUpg {
+  display: var(--main-footer-disclaimerUpg-display);
+}

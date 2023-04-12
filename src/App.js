@@ -9,25 +9,26 @@ import {
   FieldInline,
   Label,
   TextInput,
+  DateInput,
   PasswordInput,
   Checkbox,
-  Switch,
+  Select,
+  EmailInput,
   Radio,
+  Switch,
+  Title,
+  Text,
 } from "@ivanhadziilicupg/upg-community-design-system";
 import {
-  ChevronDownMedium,
   CheckMarkMedium,
   SpinnerMedium,
-  UpLogoShape,
 } from "@ivanhadziilicupg/upg-community-design-system/lib/icons";
-import { Gb } from "@ivanhadziilicupg/upg-community-design-system/lib/iso-country-flags";
-import { Logo } from "./components/Logo";
 import { BackgroundImage } from "./components/BackgroundImage";
-import "./App.css";
-import "./styles/lightTheme.css";
-import "./styles/lightForm.css";
+import { Header } from "./components/Header";
+import { MyIdButton } from "./components/MyIdButton";
 import { Footer } from "./components/Footer";
-// import "./styles/darkTheme.css";
+
+import "./App.scss";
 
 const App = () => {
   const [theme, setTheme] = useState("dark");
@@ -38,12 +39,16 @@ const App = () => {
       theme === "dark" ? colors.brand1 : colors.neutral_200;
   });
 
-  const color = theme === "dark" ? colors.white : colors.brand1;
+  const color = theme === "dark" && colors.white;
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
+      password_confirm: "",
+      birth: "",
+      // car: { value: 9, label: "Opel" },
+      car: null,
       remember: [],
       robot: "",
     },
@@ -70,11 +75,28 @@ const App = () => {
         errors.password = ["This field is required"];
       }
 
+      if (!values.password_confirm) {
+        errors.password_confirm = ["This field is required"];
+      } else if (values.password !== values.password_confirm) {
+        errors.password_confirm = [
+          "Please enter the same password as above to confirm your password",
+        ];
+      }
+
+      if (!values.birth) {
+        errors.birth = ["This field is required"];
+      }
+
+      if (Array.isArray(values.car) ? !values.car.length : !values.car) {
+        errors.car = ["This field is required"];
+      }
+
       return errors;
     },
   });
 
-  const { values, errors, touched, handleChange, handleSubmit } = formik;
+  const { values, errors, touched, handleChange, setFieldValue, handleSubmit } =
+    formik;
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,31 +104,23 @@ const App = () => {
         <BackgroundImage
           color={theme === "dark" ? colors.brand1_900 : colors.neutral_400} // colors.neutral_200 / colors.white ?
         />
-        <nav>
-          <Button
-            color="secondary"
-            width="intrinsic"
-            variant="text"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            {/* <Icon icon={ProcessMedium} position="left" /> */}
-            <Switch checked={theme === "dark"} />
-            Switch theme
-          </Button>
-          <Button
-            //
-            color="secondary"
-            width="intrinsic"
-            variant="text"
-          >
-            <Icon icon={Gb} position="left" />
-            Choose language
-            <Icon icon={ChevronDownMedium} position="right" />
-          </Button>
-        </nav>
+        <Header theme={theme} setTheme={setTheme} />
         <main>
-          <div>
-            <Logo color={color} />
+          <div className="myid-content-title" style={{ color }}>
+            <Title size="XXL" style={{ color }}>
+              Create your account
+            </Title>
+            <Text style={{ color }}>to enter Banqup</Text>
+          </div>
+          <div className="form-infobox">
+            <Title level="2" size="L">
+              One account, multiple solutions!
+            </Title>
+            <Text>
+              If you have created <strong>your Banqup account</strong> you are
+              also able to log in into multiple Unifiedpost solutions to give
+              you the best and fastest experience.
+            </Text>
           </div>
           <form onSubmit={handleSubmit}>
             <div
@@ -114,28 +128,14 @@ const App = () => {
               className=""
               style={{ textAlign: "left" }}
             >
-              <h4>Log in with a digital ID</h4>
-              <Button
-                className="myid-idp"
-                color="secondary"
-                variant="outline"
-                onClick={() => setIsSubmitting(false)}
-                // style={{
-                //   border: "1px solid var(--up-brand-1-500) !important",
-                //   color: "var(--up-brand-1-500) !important",
-                //   margin: "1em 0",
-                //   borderWidth: "1px !important",
-                // }}
-              >
-                <Icon
-                  icon={UpLogoShape}
-                  color={colors.brand1_500}
-                  // size="sm"
-                  position="left"
-                />
-                Banqup ID - MyID (uat)
-              </Button>
-              <h4>Or with your personal details</h4>
+              <Title level="4" size="S">
+                Create an account with a digital ID
+              </Title>
+              <MyIdButton onClick={() => setIsSubmitting(false)} />
+              <Title level="4" size="S">
+                Or, please fill in the remaining fields to complete the
+                registration.
+              </Title>
             </div>
             <Field>
               <Label isRequired tooltip="E-mail">
@@ -154,15 +154,6 @@ const App = () => {
             <Field>
               <Label isRequired tooltip="Password">
                 Password
-                <a
-                  href="/auth/realms/pp-upg-sso/login-actions/reset-credentials?client_id=pp-paa-platformsandapps&amp;tab_id=ztYtexI8U5g"
-                  style={{
-                    float: "right",
-                    marginBottom: 0,
-                  }}
-                >
-                  Forgot Password?
-                </a>
               </Label>
               <PasswordInput
                 placeholder="Password"
@@ -171,7 +162,6 @@ const App = () => {
                 name="password"
                 onChange={handleChange}
                 value={values.password}
-                sizeVariant={"normal"}
                 errors={touched.password && errors.password}
                 helpers={[
                   "Use at least: minimal 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
@@ -179,18 +169,82 @@ const App = () => {
                 // disabled
               />
             </Field>
-            <div role="group">
-              <FieldInline>
-                <Checkbox
-                  //
-                  name="remember"
-                  onChange={handleChange}
-                  value={"remember"}
-                />
-                <Label tooltip="Checkbox field label">Remember me?</Label>
-              </FieldInline>
-            </div>
-            <div style={{ textAlign: "center", marginTop: "1rem" }}>
+
+            <Field>
+              <Label isRequired tooltip="Password">
+                Confirm password
+                {/* <a href="/auth/realms/pp-upg-sso/login-actions/reset-credentials?client_id=pp-paa-platformsandapps&amp;tab_id=ztYtexI8U5g">
+                  Forgot Password?
+                </a> */}
+              </Label>
+              <PasswordInput
+                placeholder="Password"
+                autoComplete="false"
+                isPasswordVisibilityToggleable
+                name="password_confirm"
+                onChange={handleChange}
+                value={values.password_confirm}
+                errors={touched.password_confirm && errors.password_confirm}
+                // disabled
+              />
+            </Field>
+            <Field>
+              <Label isRequired tooltip="Date of birth">
+                Date of birth
+              </Label>
+              <DateInput
+                placeholder="Date of birth"
+                autoComplete="false"
+                name="birth"
+                onChange={handleChange}
+                value={values.birth}
+                errors={touched.birth && errors.birth}
+                // disabled
+                // readonly
+              />
+            </Field>
+            <Field
+            // sizeVariant="condensed"
+            >
+              <Label isRequired tooltip="Your car brand">
+                Car brand
+              </Label>
+              <Select
+                placeholder="Select your car brand"
+                options={[
+                  { value: 1, label: "Audi" },
+                  { value: 2, label: "Mercedes-Benz" },
+                  { value: 3, label: "BMW" },
+                  { value: 4, label: "Dacia" },
+                  { value: 5, label: "Renault" },
+                  { value: 6, label: "Peugeot" },
+                  { value: 7, label: "Citroen" },
+                  { value: 8, label: "Tesla" },
+                  { value: 9, label: "Opel" },
+                  { value: 10, label: "Fiat" },
+                  { value: 11, label: "Alfa-Romeo" },
+                  { value: 12, label: "Bugatti" },
+                ]}
+                // isMulti
+                // disabled
+                name="car"
+                onChange={(selected) => setFieldValue("car", selected)}
+                value={values.car}
+                errors={touched.car && errors.car}
+              />
+            </Field>
+            <FieldInline>
+              <Checkbox
+                //
+                name="remember"
+                onChange={handleChange}
+                value={"remember"}
+              />
+              <Label tooltip="Checkbox field label">
+                Subscribe to our newsletter?
+              </Label>
+            </FieldInline>
+            <div className="myid-form-group centered">
               <Button
                 //
                 width="fixed"
@@ -211,21 +265,10 @@ const App = () => {
                 )}
               </Button>
             </div>
+            <div className="myid-form-group centered">
+              Already an account? <a href="#">Back to login</a>
+            </div>
           </form>
-          <div id="myid-login-infobox" class="myid-infobox myid-infobox-footer">
-            <h2>One account, multiple solutions!</h2>
-            <span>
-              Do you already have an account on one of the Unifiedpost
-              solutions? Great! You can go on right away.
-            </span>
-          </div>
-          {/* <Button
-            color="secondary"
-            variant="text"
-            onClick={() => setIsSubmitting(false)}
-          >
-            Forgot your password?
-          </Button> */}
         </main>
         <Footer />
       </div>

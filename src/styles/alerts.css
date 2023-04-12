@@ -1,0 +1,65 @@
+.myid-alert-message {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.myid-alert-message.myid-alert-message-success {
+  background-color: var(--success-message-background);
+  color: var(--success-message);
+}
+
+.myid-alert-message.myid-alert-message-warning {
+  background-color: var(--warning-message-background);
+  color: var(--warning-message);
+}
+.myid-alert-message.myid-alert-message-error {
+  background-color: var(--error-message-background);
+  color: var(--error-message);
+}
+
+.myid-alert-message.myid-alert-message-info {
+  background-color: var(--info-message-background);
+  color: var(--info-message);
+}
+
+.myid-alert-message-text {
+  flex-grow: 1;
+}
+
+/*
+* ALERT ICON
+*/
+.myid-alert-icon {
+  min-width: 1.5rem;
+  min-height: 1.25rem;
+  padding-right: 1rem;
+  background-repeat: no-repeat;
+}
+
+.myid-feedback-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+}
+
+/* .myid-feedback-icon.myid-feedback-icon-success{
+    background-image: url(../img/success.svg);;
+}
+
+.myid-feedback-icon.myid-feedback-icon-warning{
+    background-image: url(../img/warning.svg);;
+}
+
+.myid-feedback-icon.myid-feedback-icon-error{
+    background-image: url(../img/error.svg);;
+}
+
+.myid-feedback-icon.myid-feedback-icon-info{
+    background-image: url(../img/info.svg);;
+} */

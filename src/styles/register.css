@@ -1,0 +1,42 @@
+#kc-register-form {
+    display: flex;
+}
+
+#registerFirstSection {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.myid-register-code-input-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+/*=============================================================================*/
+/* PINCODE INPUT */
+/*=============================================================================*/
+.pincode-input-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+.pincode-input-container > input.myid-register-code-input-field {
+    text-align: center;
+
+    border: 1px solid var(--form-input-border);
+    margin-right: 0.5rem;
+    width: 3rem !important;
+    height: 4rem;
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+}
+
+.pincode-input-container > input.myid-register-code-input-field:focus-visible {
+    outline-width: 0;
+    border: 1px solid var(--color-secondary);
+}
+
