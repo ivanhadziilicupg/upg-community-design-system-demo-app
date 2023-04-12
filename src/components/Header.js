@@ -1,5 +1,7 @@
 import {
   colors,
+  FieldInline,
+  Label,
   Icon,
   Switch,
 } from "@ivanhadziilicupg/upg-community-design-system";
@@ -7,31 +9,31 @@ import { ChevronDownMedium } from "@ivanhadziilicupg/upg-community-design-system
 import { Gb } from "@ivanhadziilicupg/upg-community-design-system/lib/iso-country-flags";
 import { Logo } from "./Logo";
 
-export const Header = ({ theme, setTheme, color }) => (
+export const Header = ({ theme, setTheme }) => (
   <header className="myid-login-form-header">
     <div>
       <Logo color={theme === "dark" ? colors.white : colors.brand1} />
       <div className="top-header-right">
         <div>
           <span className="myid-current-locale-subtitle">Theme</span>
-          <a
-            href="javascript:void(0)"
+          <div
+            // href="javascript:void(0)"
             id="kc-current-locale-link"
             className="myid-current-locale"
           >
-            <span
-              className="myid-current-locale-label"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              <Switch checked={theme === "dark"} />
-              {theme === "light" ? "Light" : "Dark"}
-            </span>
-          </a>
+            <FieldInline className="myid-current-locale-label">
+              <Switch
+                checked={theme === "dark"}
+                onChange={() => setTheme(theme === "light" ? "dark" : "light")}
+              />
+              <Label size="base">{theme === "light" ? "Light" : "Dark"}</Label>
+            </FieldInline>
+          </div>
         </div>
         <div className="kc-dropdown">
           <span className="myid-current-locale-subtitle">Language</span>
           <a
-            href="javascript:void(0)"
+            // href="javascript:void(0)"
             id="kc-current-locale-link"
             className="myid-current-locale"
           >
@@ -48,10 +50,10 @@ export const Header = ({ theme, setTheme, color }) => (
           <ul className="myid-supported-locales">
             <div className="support-language-list">
               <li className="kc-dropdown-item selected">
-                <a href="javascript:void(0)">English</a>
+                <a href="">English</a>
               </li>
               <li className="kc-dropdown-item">
-                <a href="javascript:void(0)">Srpski</a>
+                <a href="">Srpski</a>
               </li>
             </div>
           </ul>
@@ -60,30 +62,3 @@ export const Header = ({ theme, setTheme, color }) => (
     </div>
   </header>
 );
-
-// export const Header = ({ theme, setTheme, color }) => {
-//   return (
-//     <nav>
-//       <Logo color={color} />
-//       <Button
-//         color="secondary"
-//         width="intrinsic"
-//         variant="text"
-//         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-//       >
-//         <Switch checked={theme === "dark"} />
-//         Switch theme
-//       </Button>
-//       <Button
-//         //
-//         color="secondary"
-//         width="intrinsic"
-//         variant="text"
-//       >
-//         <Icon icon={Gb} position="left" />
-//         Choose language
-//         <Icon icon={ChevronDownMedium} position="right" />
-//       </Button>
-//     </nav>
-//   );
-// };

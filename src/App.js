@@ -47,6 +47,7 @@ const App = () => {
       password: "",
       password_confirm: "",
       birth: "",
+      sex: "male",
       // car: { value: 9, label: "Opel" },
       car: null,
       remember: [],
@@ -87,6 +88,10 @@ const App = () => {
         errors.birth = ["This field is required"];
       }
 
+      if (!values.sex) {
+        errors.sex = ["This field is required"];
+      }
+
       if (Array.isArray(values.car) ? !values.car.length : !values.car) {
         errors.car = ["This field is required"];
       }
@@ -113,7 +118,7 @@ const App = () => {
             <Text style={{ color }}>to enter Banqup</Text>
           </div>
           <div className="form-infobox">
-            <Title level="2" size="L">
+            <Title level={2} size="L">
               One account, multiple solutions!
             </Title>
             <Text>
@@ -128,11 +133,11 @@ const App = () => {
               className=""
               style={{ textAlign: "left" }}
             >
-              <Title level="4" size="S">
+              <Title level={4} size="S">
                 Create an account with a digital ID
               </Title>
               <MyIdButton onClick={() => setIsSubmitting(false)} />
-              <Title level="4" size="S">
+              <Title level={4} size="S">
                 Or, please fill in the remaining fields to complete the
                 registration.
               </Title>
@@ -206,7 +211,7 @@ const App = () => {
             <Field
             // sizeVariant="condensed"
             >
-              <Label isRequired tooltip="Your car brand">
+              <Label isRequired tooltip="Choose your car brand">
                 Car brand
               </Label>
               <Select
@@ -233,17 +238,46 @@ const App = () => {
                 errors={touched.car && errors.car}
               />
             </Field>
-            <FieldInline>
-              <Checkbox
-                //
-                name="remember"
-                onChange={handleChange}
-                value={"remember"}
-              />
-              <Label tooltip="Checkbox field label">
+            <div style={{ margin: "0.6rem 0" }}>
+              <Label tooltip="Choose your sex" isRequired>
+                Sex
+              </Label>
+              <FieldInline style={{ marginRight: "2rem" }}>
+                <Radio
+                  //
+                  name="sex"
+                  onChange={handleChange}
+                  checked={values.sex === "male"}
+                  value={"male"}
+                />
+                <Label>Male</Label>
+              </FieldInline>
+              <FieldInline>
+                <Radio
+                  //
+                  name="sex"
+                  onChange={handleChange}
+                  checked={values.sex === "female"}
+                  value={"female"}
+                />
+                <Label>Female</Label>
+              </FieldInline>
+            </div>
+            <div style={{ margin: "0.6rem 0" }}>
+              <Label tooltip="Subscribe to our newsletter?">
                 Subscribe to our newsletter?
               </Label>
-            </FieldInline>
+              <FieldInline>
+                <Checkbox
+                  //
+                  name="remember"
+                  onChange={handleChange}
+                  value={"remember"}
+                />
+                <Label>Yes, I agree</Label>
+              </FieldInline>
+            </div>
+
             <div className="myid-form-group centered">
               <Button
                 //

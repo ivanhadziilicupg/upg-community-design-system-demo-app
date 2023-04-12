@@ -24,21 +24,6 @@ body,
   }
 }
 
-// [type="date"] {
-//   &::-webkit-calendar-picker-indicator {
-//     outline: none !important;
-//   }
-// }
-// // input {
-// //   &:-internal-autofill-selected {
-// //     background-color: white !important;
-// //   }
-// // }
-// input[class*="Fieldstyled__StyledField"] {
-//   &:focus-visible {
-//     background-color: white !important;
-//   }
-// }
 [class*="Fieldstyled__StyledField"] {
   &:-webkit-autofill {
     box-shadow: 0 0 0 30px white inset !important;
@@ -131,19 +116,7 @@ nav {
   > button {
     height: 100% !important;
   }
-
-  [class^="Fieldstyled__StyledCheckableWrapper"] {
-    margin-bottom: 3px;
-  }
 }
-
-// [class^="Fieldstyled__StyledField"] {
-//   padding: 0.6rem 0;
-// }
-
-// [role="group"] {
-//   padding: 0.6rem 0;
-// }
 
 .myid-form-group {
   padding: 0.6rem 0;
@@ -255,10 +228,8 @@ button.myid-idp {
   }
 }
 
-.myid-current-locale-label i {
+.myid-current-locale-label i,
+.myid-current-locale-label [class^="Switchstyled__StyledSwitchSlider"] {
+  // margin-bottom: -1px;
   vertical-align: middle;
-}
-
-[class^="Fieldstyled__StyledCheckableWrapper"] {
-  vertical-align: initial !important;
 }

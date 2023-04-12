@@ -2,8 +2,9 @@
   "name": "cra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ivanhadziilicupg.github.io/upg-community-design-system-demo-app",
   "dependencies": {
-    "@ivanhadziilicupg/upg-community-design-system": "0.2.60",
+    "@ivanhadziilicupg/upg-community-design-system": "0.2.62",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",

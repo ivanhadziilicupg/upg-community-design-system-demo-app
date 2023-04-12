@@ -6,7 +6,7 @@ import {
 
 export const Logo = ({ color }) => {
   return (
-    <a href="/" className="logo">
+    <a href="" className="logo">
       <Icon icon={UpLogoShape} color={color} position="left" />
       <i className="upg">
         <UpLogoName color={color} />
